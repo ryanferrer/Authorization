@@ -4,4 +4,4 @@ node_js:
   - 10
 
 cache: 
-  npm: true 
+  npm: true
