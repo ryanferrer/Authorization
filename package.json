@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "server": "nodemon ./server/server.js",
-    "start": "webpack -D --watch"
+    "start": "webpack -D --watch",
+    "build-app": "webpack --mode production",
+    "dockerize": "sudo docker build -t template . && sudo docker run --name template -p 3030:3030 -d template"
   },
   "repository": {
     "type": "git",
