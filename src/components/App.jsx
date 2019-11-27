@@ -3,8 +3,8 @@ import React, { Component } from 'react';
 class App extends Component {
   render() {
     return (
-      <div>
-        {"Check me out! I'm Dockerized!"}
+      <div className="sample">
+        {"Check me out! I'm styling!"}
       </div>
     );
   }
