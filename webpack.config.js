@@ -41,6 +41,15 @@ module.exports = {
           'sass-loader',
         ],
       },
+      {
+        // Feel free to change next line for when you need to support other file extensions
+        test: /\.(png|jpe?g|gif)$/i,
+        use: [
+          {
+            loader: 'file-loader',
+          },
+        ],
+      },
     ],
   },
   plugins: [
