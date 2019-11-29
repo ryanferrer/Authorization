@@ -1,3 +1,9 @@
+# Authorization
+
+This services runs on port 8080 of the Docker Daemon and mapped from port 3030 of it's container.
+
+This repo contains all the services for signing up and signing in. 
+
 # RemoteReq template repo    
 [![Build Status](https://travis-ci.org/RemoteReq/Template.svg?branch=master)](https://travis-ci.org/RemoteReq/Template)
 
