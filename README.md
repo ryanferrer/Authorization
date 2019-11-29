@@ -22,7 +22,7 @@ What's also neat is that this markdown also comes with a badge to show whether o
 - `dockerize`
   - a script that automates the docker build and run commands. It's configured to run and map the app from port 3030 of `server.js` to a desired port.
 
-    - ## DO NOT FORGET TO CHANGE THE VALUES FOR 
+    - ### Remeber to change the following values before you dockerize!
       - `-t` to an appropiate tag name
       - `--name` to an appropriate image name
       - `-d` to the corresponding image name
