@@ -7,7 +7,7 @@
     "server": "nodemon ./server/server.js",
     "build:dev": "webpack-dev-server",
     "build:pro": "webpack --mode production",
-    "dockerize": "sudo docker build -t template . && sudo docker run --name template -p 3030:3030 -d template"
+    "dockerize": "sudo docker build -t auth . && sudo docker run --name auth -p 8080:3030 -d auth"
   },
   "repository": {
     "type": "git",
