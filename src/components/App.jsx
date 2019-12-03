@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import LoginPage from './LoginPage.jsx';
+import SignUp from './SignUp.jsx';
 
 import Axios from 'axios';
 
@@ -37,6 +38,7 @@ class App extends Component {
   render() {
     return (
       <div className="loginPage">
+        <SignUp />
         <LoginPage 
           userInput={this.userInput}
           login={this.login}
