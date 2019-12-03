@@ -3,7 +3,13 @@ const express = require('express');
 const app = express();
 const PORT = 3030;
 
+// import route handlers
+const user = require('./routes/User.js');
+
 app.use(express.static('dist'));
+
+// routes
+app.use('/user', user);
 
 app.get('/', (req, res) => {
   res.status(200).send();
