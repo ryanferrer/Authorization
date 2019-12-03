@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 
+// These are development variables and don't need to be srored in a .env file until production
 const DB_ADDRESS = 'localhost';
 const DB_NAME = 'test';
 
