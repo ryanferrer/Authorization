@@ -20,7 +20,7 @@ function addUser(payload, callback) {
       callback(err);
     } else {
       console.log('adding user..');
-      callback(data);
+      callback(null, data);
       console.log('success!');
     }
   });
@@ -33,7 +33,7 @@ function listUsers(callback) {
       callback(err);
     } else {
       console.log('retrieving list of users..');
-      callback(data);
+      callback(null, data);
       console.log('success!');
     }
   });
@@ -52,7 +52,7 @@ function updateUserPassword(payload, callback) {
       callback(err);
     } else {
       console.log('updating user password..');
-      callback(data);
+      callback(null, data);
       console.log('success!');
     }
   });
@@ -69,7 +69,7 @@ function deleteUser(payload, callback) {
       callback(err);
     } else {
       console.log('deleting user..');
-      callback(data);
+      callback(null, data);
       console.log('success!');
     }
   });
