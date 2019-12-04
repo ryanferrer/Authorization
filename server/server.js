@@ -4,7 +4,7 @@ const app = express();
 const PORT = 3030;
 
 // import route handlers
-const user = require('./routes/User.js');
+const user = require('./routes/api/User.js');
 
 app.use(express.static('dist'));
 
