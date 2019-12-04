@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import LoginPage from './LoginPage.jsx';
-import SignUp from './SignUp.jsx';
+import Registration from './Registration.jsx';
 
 import Axios from 'axios';
 
@@ -10,7 +10,21 @@ class App extends Component {
 
     this.state = {
       loginEmail: '',
-      loginPassword: ''
+      loginPassword: '',
+      regFirstName: '',
+      regLastName: '',
+      regPhoneNumber: '',
+      regPass: '',
+      regPassTwo: '',
+      USEligible: '',
+      regEd: '',
+      regEngFluent: '',
+      regOtherLang: '',
+      regLinkedin: '',
+      regGithub: '',
+      regPersonalSite: '',
+      regAccessToInternet: '',
+      howDidYouHear: ''
     };
 
     this.userInput = this.userInput.bind(this);
@@ -18,10 +32,13 @@ class App extends Component {
   }
 
   userInput(event) {
-    const name = event.target.name;
-    const value = event.target.value;
+    const target = event.target;
+    const value = target.type === 'checkbox' ? target.checked : target.value;
+    const name = target.name;
 
-    this.setState({ [name]: value })
+    this.setState({
+      [name]: value
+    });
   }
 
   login() {
@@ -38,11 +55,13 @@ class App extends Component {
   render() {
     return (
       <div className="loginPage">
-        <SignUp />
-        <LoginPage 
+        <Registration 
+          userInput={ this.userInput }
+        />
+        {/* <LoginPage 
           userInput={this.userInput}
           login={this.login}
-        />
+        /> */}
       </div>
     );
   }
