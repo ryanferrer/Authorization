@@ -11,7 +11,7 @@ const {
 // route handlers
 
 
-router.post('/', (req, res) => {
+router.get('/', (req, res) => {
   console.log('/user POST HIT!');
 
   listUsers((err, data) => {
