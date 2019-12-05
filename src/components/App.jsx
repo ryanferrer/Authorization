@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import LoginPage from './LoginPage.jsx';
 import Registration from './Registration.jsx';
+import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
+
 
 import Axios from 'axios';
 
@@ -54,15 +56,30 @@ class App extends Component {
 
   render() {
     return (
-      <div className="loginPage">
-        <Registration 
-          userInput={ this.userInput }
-        />
-        {/* <LoginPage 
-          userInput={this.userInput}
-          login={this.login}
-        /> */}
-      </div>
+      <Router>
+        <div className="loginPage">
+          {/* <Navigation /> */}
+          <Switch>
+            <Route 
+              path='/registration'
+              render={ props =>
+                <Registration 
+                  userInput={ this.userInput }
+                />
+              }
+            />
+            <Route 
+              path='/login'
+              render={ props => 
+                <LoginPage 
+                  userInput={this.userInput}
+                  login={this.login}
+                />
+              }
+            />
+          </Switch>
+        </div>
+      </Router>
     );
   }
 }
