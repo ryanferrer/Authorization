@@ -1,21 +1,76 @@
 .registration {
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
+  padding-top: 100px;
+
+  h2 {
+    color: blue;
+    font-size:2rem;
+    text-align: center;
+  }
+
+  p {
+    text-align: center;
+
+    a {
+      text-decoration: none;
+    }
+  }
+
+  img {
+    height: 500px;
+  }
+
   form {
+    background: #e4e4e4;
     display: flex;
     flex-direction: column;
-    margin-top: 100px;
+    padding: 50px;
+    margin-bottom: 100px;
     width: 500px;
 
     input {
       font-size: 1.3rem;
       height: 40px;
+      margin-bottom: 10px;
       padding: 0 .5rem;
+      width: 100%;
     }
 
     .image-upload {
       height: 100px;
       width: 100px;
+    }
+
+    select {
+      font-size: 1.3rem;
+      height: 40px;
+      width: 100px;
+    }
+
+    textarea {
+      font-size: 1.3rem;
+      height: 100px;
+      resize: none;
+      width: 100%;
+    }
+
+    button {
+      background: #0000ff;
+      border: 4px solid #0000ff;
+      color: #fff;
+      font-size: 1.5rem;
+      height: 77px;
+      margin-top: 10px;
+      text-transform: uppercase;
+      width: 332px;
+    }
+
+    button:hover {
+      background: #fff;
+      color: #0000ff;
+      cursor: pointer;
+      transition: 400ms;
     }
   }
 }

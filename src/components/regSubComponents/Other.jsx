@@ -15,7 +15,7 @@ const Other = props => (
     <textarea 
       name='howDidYouHear'
       onChange={ event => props.userInput(event) }
-      placeholder='How did you hear about us?'>
+      placeholder='Linkedin, Facebook, Google Search, etc.'>
     </textarea>
   </div>
 );
