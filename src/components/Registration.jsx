@@ -11,6 +11,7 @@ const Registration = props => (
       <ResEdLang userInput={props.userInput} />
       <SocialMedSites userInput={props.userInput} />
       <Other userInput={props.userInput} />
+      <button type='submit'>register</button>
     </form>
   </div>
 );
