@@ -10,6 +10,7 @@ const User = require('../models/User.js');
   Delete -> .deleteOne()
 */
 
+// Add a new user to the database
 function addUser(payload, callback) {
   // create new user to insert
   const user = new User(payload);
@@ -26,6 +27,7 @@ function addUser(payload, callback) {
   });
 }
 
+// Retrieve and list all users from database (we may actually not want to use this, but it's there)
 function listUsers(callback) {
   User.find({}, (err, data) => {
     if (err) {
@@ -39,6 +41,7 @@ function listUsers(callback) {
   });
 }
 
+// Update a user's password in the database
 function updateUserPassword(payload, callback) {
   const query = {
     username: payload.username,
@@ -58,6 +61,7 @@ function updateUserPassword(payload, callback) {
   });
 }
 
+// Delete a user from the database
 function deleteUser(payload, callback) {
   const query = {
     username: payload.username,
@@ -75,6 +79,7 @@ function deleteUser(payload, callback) {
   });
 }
 
+// find a user based off of incoming payload
 function findUser(payload, callback) {
   User.findOne(payload, (err, data) => {
     if (err || data === null) {

@@ -12,7 +12,7 @@ const {
 
 
 router.get('/', (req, res) => {
-  console.log('/user POST HIT!');
+  console.log('/user GET HIT!');
 
   listUsers((err, data) => {
     if (err) {
@@ -28,18 +28,19 @@ router.get('/', (req, res) => {
 
 router.post('/', (req, res) => {
   console.log('/user POST HIT!');
-  const { payload } = req.body;
+  const payload = {
+    username: req.body.username || null,
+    password: req.body.password || null,
+  };
 
-  addUser(payload, (err, data) => {
+  console.log(payload);
+
+  addUser(payload, (err) => {
     if (err) {
-      console.log(err);
       res.status(400).send('could not register user');
     } else {
-      console.log('user registered: ', data);
       res.status(200).send('you are now registered!');
     }
   });
-
-  res.status(200).send('I am the API for getting USERS!');
 });
 module.exports = router;
