@@ -1,6 +1,7 @@
 const express = require('express');
 
 const bodyParser = require('body-parser');
+const history = require('connect-history-api-fallback');
 
 const app = express();
 const PORT = 3030;
@@ -10,9 +11,13 @@ const user = require('./routes/api/User.js');
 const login = require('./routes/api/Login.js');
 
 // express middleware
-app.use(express.static('dist'));
+
+// User history to intecept client requests and forward to React Router history
+app.use(history());
+
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
+app.use(express.static('dist'));
 
 // routes
 app.use('/api/user', user);
