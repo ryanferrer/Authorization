@@ -75,9 +75,22 @@ function deleteUser(payload, callback) {
   });
 }
 
+function findUser(payload, callback) {
+  User.findOne(payload, (err, data) => {
+    if (err || data === null) {
+      console.log('could not find user');
+      callback(err, data);
+    } else {
+      console.log('user found! Logging in..', data);
+      callback(null, data);
+    }
+  });
+}
+
 module.exports = {
   addUser,
   listUsers,
+  findUser,
   updateUserPassword,
   deleteUser,
 };
