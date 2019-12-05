@@ -1,0 +1,21 @@
+.registration {
+  display: flex;
+  justify-content: center;
+  form {
+    display: flex;
+    flex-direction: column;
+    margin-top: 100px;
+    width: 500px;
+
+    input {
+      font-size: 1.3rem;
+      height: 40px;
+      padding: 0 .5rem;
+    }
+
+    .image-upload {
+      height: 100px;
+      width: 100px;
+    }
+  }
+}
