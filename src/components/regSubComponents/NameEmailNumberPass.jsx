@@ -2,6 +2,8 @@ import React from 'react';
 
 const NameEmailNumberPass = props => (
   <div>
+    <h2>Complete the form below to find your next remote gig.</h2>
+    <p>Already have an account? <a href='/login'>Sign In</a>.</p>
     <input 
       type='text' 
       name='regFirstName' 

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Navigation from './Navigation.jsx';
 import LoginPage from './LoginPage.jsx';
 import Registration from './Registration.jsx';
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
@@ -26,11 +27,13 @@ class App extends Component {
       regGithub: '',
       regPersonalSite: '',
       regAccessToInternet: '',
-      howDidYouHear: ''
+      howDidYouHear: '',
+      navMenuVisible: false
     };
 
     this.userInput = this.userInput.bind(this);
     this.login = this.login.bind(this);
+    this.menuClick = this.menuClick.bind(this);
   }
 
   userInput(event) {
@@ -41,6 +44,10 @@ class App extends Component {
     this.setState({
       [name]: value
     });
+  }
+
+  menuClick() {
+    this.setState({ navMenuVisible: !this.state.navMenuVisible })
   }
 
   login() {
@@ -57,8 +64,8 @@ class App extends Component {
   render() {
     return (
       <Router>
-        <div className="loginPage">
-          {/* <Navigation /> */}
+        <div className='login-registration'>
+          <Navigation menuClick={ this.menuClick } />
           <Switch>
             <Route 
               path='/registration'
