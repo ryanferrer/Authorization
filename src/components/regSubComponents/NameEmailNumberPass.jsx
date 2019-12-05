@@ -31,10 +31,10 @@ const NameEmailNumberPass = props => (
       placeholder='confirm your password' />
     <input 
       type='tel' 
-      name='phone'
+      name='regPhoneNumber'
       pattern='[0-9]{3}-[0-9]{3}-[0-9]{4}'
       onChange={ event => props.userInput(event) }
-      placeholder='please enter your phone number'
+      placeholder='phone number: 555-555-5555'
       required />
   </div>
 )

@@ -16,6 +16,7 @@ class App extends Component {
       loginPassword: '',
       regFirstName: '',
       regLastName: '',
+      regEmail: '',
       regPhoneNumber: '',
       regPass: '',
       regPassTwo: '',
@@ -33,6 +34,7 @@ class App extends Component {
 
     this.userInput = this.userInput.bind(this);
     this.login = this.login.bind(this);
+    this.register = this.register.bind(this);
     this.menuClick = this.menuClick.bind(this);
   }
 
@@ -50,6 +52,38 @@ class App extends Component {
     this.setState({ navMenuVisible: !this.state.navMenuVisible })
   }
 
+  register() {
+    const Fname = this.state.regFirstName;
+    const Lname = this.state.regLastName;
+    const regEmail = this.state.regEmail;
+    const passOne = this.state.regPass;
+    const passTwo = this.state.regPassTwo;
+
+    if ( 
+        passOne === passTwo &&
+        Fname.length > 0 &&
+        Lname.length > 0 &&
+        regEmail.length > 0 &&
+        regEmail.includes('@')
+      ) {
+      const regInfo = {
+        firstName: Fname,
+        lastName: Lname,
+        email: regEmail,
+        password: passOne,
+        confirmPassword: passTwo,
+        phone: this.state.regPhoneNumber
+      }
+
+      // Axios.post('/registration', { regInfo })
+      // .then(() => console.log('success'))
+      // .catch(() => console.log('registration failed'))
+      console.log( 'success: ', regInfo)
+    } else {
+      alert('Registration failed. This may be due to incomplete fields or passwords not matching.')
+    }
+  }
+
   login() {
     const logInfo = {
       email: this.state.loginEmail,
@@ -58,7 +92,7 @@ class App extends Component {
 
     Axios.post('/login', { logInfo })
       .then(() => console.log('success'))
-      .catch(() => console.log('you\'re a failure!'))
+      .catch(() => console.log('login failed'))
   }
 
   render() {
@@ -72,6 +106,7 @@ class App extends Component {
               render={ props =>
                 <Registration 
                   userInput={ this.userInput }
+                  register={ this.register }
                 />
               }
             />
