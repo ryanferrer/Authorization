@@ -4,6 +4,8 @@ import LoginPage from './LoginPage.jsx';
 import Registration from './Registration.jsx';
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 
+import validatePassword from '../validatePassword';
+
 
 import Axios from 'axios';
 
@@ -60,6 +62,7 @@ class App extends Component {
     const passTwo = this.state.regPassTwo;
 
     if ( 
+        // validatePassword(passOne) === true &&
         passOne === passTwo &&
         Fname.length > 0 &&
         Lname.length > 0 &&
@@ -80,7 +83,7 @@ class App extends Component {
       // .catch(() => console.log('registration failed'))
       console.log( 'success: ', regInfo)
     } else {
-      alert('Registration failed. This may be due to incomplete fields or passwords not matching.')
+      alert('Registration failed. This may be due to incomplete fields, passwords not matching, or your password is missing required characters.')
     }
   }
 
