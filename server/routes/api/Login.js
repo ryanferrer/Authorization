@@ -22,8 +22,8 @@ route.post('/', (req, res) => {
   console.log('incoming request for: ', req.body);
 
   const payload = {
-    username: req.body.username,
-    password: req.body.password,
+    username: req.body.user.username,
+    password: req.body.user.password,
   };
 
   findUser(payload, (err, data) => {
