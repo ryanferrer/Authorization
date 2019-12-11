@@ -27,15 +27,9 @@ router.get('/', (req, res) => {
 
 
 router.post('/', (req, res) => {
-  console.log('/user POST HIT!');
-  const payload = {
-    username: req.body.username || null,
-    password: req.body.password || null,
-  };
+  console.log('/user POST HIT!', req.body);
 
-  console.log(payload);
-
-  addUser(payload, (err) => {
+  addUser(req.body, (err) => {
     if (err) {
       res.status(400).send('could not register user');
     } else {
