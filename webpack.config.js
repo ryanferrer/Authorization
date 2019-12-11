@@ -12,12 +12,14 @@ module.exports = {
     alias: {
       '#scss': path.join(__dirname, 'scss/'),
       '#assets': path.join(__dirname, 'assets/'),
+      '#controllers:': path.join(__dirname, 'database/controllers/'),
     },
   },
   devServer: {
     contentBase: 'dist',
     port: 8080,
     hot: true,
+    historyApiFallback: true,
   },
   module: {
     rules: [

@@ -34,7 +34,7 @@ const LoginPage = props => (
         <button type="submit" onClick={ () => props.login() }>Login</button>
         <a href="#">Forgot Password</a>
         <p>
-          Don't have an account? <a href="#">Sign Up</a>
+          Don't have an account? <a href="/registration">Sign Up</a>
         </p>
       </form>
     </div>
