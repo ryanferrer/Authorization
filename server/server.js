@@ -10,8 +10,6 @@ const PORT = 3030;
 const user = require('./routes/api/User.js');
 const login = require('./routes/api/Login.js');
 
-// express middleware
-
 // User history to intecept client requests and forward to React Router history
 app.use(history());
 
