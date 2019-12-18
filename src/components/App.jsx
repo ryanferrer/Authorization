@@ -5,8 +5,6 @@ import Navigation from './Navigation.jsx';
 import LoginPage from './LoginPage.jsx';
 import Registration from './Registration.jsx';
 
-import validatePassword from '../validatePassword';
-
 
 class App extends Component {
   constructor(props) {
@@ -21,16 +19,7 @@ class App extends Component {
       regPhoneNumber: '',
       regPass: '',
       regPassTwo: '',
-      USEligible: '',
-      regEd: '',
-      regEngFluent: '',
-      regOtherLang: '',
-      regLinkedin: '',
-      regGithub: '',
-      regPersonalSite: '',
-      regAccessToInternet: '',
-      howDidYouHear: '',
-      navMenuVisible: false,
+      navMenuVisible: false
     };
 
     this.userInput = this.userInput.bind(this);
