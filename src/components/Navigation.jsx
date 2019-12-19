@@ -1,16 +1,16 @@
 import React from 'react';
 
-const Navigation = props => {
+const Navigation = (props) => {
   let menuVisible;
 
-  if (props.LandingPageMenuVisible === false && screen.width < 1366 ) {
-      menuVisible = {
-      display: 'none'
-      }
-    } else {
-      menuVisible = {
-        display: 'block'
-    }
+  if (props.LandingPageMenuVisible === false && screen.width < 1366) {
+    menuVisible = {
+      display: 'none',
+    };
+  } else {
+    menuVisible = {
+      display: 'block',
+    };
   }
 
   return (
@@ -18,7 +18,7 @@ const Navigation = props => {
       <div className="landingPage-logo-menu">
         <h2 className='logo'>RemoteReq</h2>
         <div className="landingPage-menu">
-          <label 
+          <label
             htmlFor='toggle'
             className='hamburgerMenu'
             onClick={() => props.menuClick()}
@@ -30,13 +30,13 @@ const Navigation = props => {
           <li>home</li>
           <li>employers</li>
           <li className='job-seekers'>job seekers</li>
-          <li className='landingPage-signIn-button'><a href='http://localhost:8080/login'>
+          <li className='landingPage-signIn-button'><a href='/signin'>
           sign in
         </a></li>
         </ul>
       </div>
     </nav>
-  )
+  );
 };
 
 export default Navigation;
