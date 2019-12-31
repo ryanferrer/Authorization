@@ -1,7 +1,8 @@
+require('dotenv').config({ path: '../../.env' });
 const mongoose = require('mongoose');
 
 // These are development variables and don't need to be srored in a .env file until production
-const DB_ADDRESS = 'localhost';
+const DB_ADDRESS = process.env.DATABASE_IP;
 const DB_NAME = 'rrdev';
 
 mongoose.connect(`mongodb://${DB_ADDRESS}/${DB_NAME}`, {
