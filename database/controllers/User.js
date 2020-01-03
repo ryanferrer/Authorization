@@ -92,7 +92,40 @@ function findUser(payload, callback) {
   });
 }
 
+/*
+
+  Auth psuedocode
+
+  I: User credentials
+  O: Login/Session Token
+
+  User sends username and password as credentials object
+  OR User sends email and password as crecentials object
+
+  then query the DB to see if there is a matching username/email (which is unique)
+  and get the password
+
+  then check to see if the password result from the query matches
+  the input password found in the credentials object
+
+*/
+
+function authenticate(credentials, callback) {
+  const query = credentials.username;
+
+  User.find({ 'credentials.username': query }, 'credentials.password', (err, data) => {
+    if (err) {
+      console.log('could not find and authenticate user');
+      callback(err);
+    } else {
+      console.log('here is the password for the user', query, data);
+      callback(null, data);
+    }
+  });
+}
+
 module.exports = {
+  authenticate,
   addUser,
   listUsers,
   findUser,
