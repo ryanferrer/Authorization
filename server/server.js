@@ -7,6 +7,7 @@ const app = express();
 const PORT = 3030;
 
 // import route handlers
+const signup = require('./routes/api/Signup.js');
 const user = require('./routes/api/User.js');
 const login = require('./routes/api/Login.js');
 const auth = require('./routes/api/Auth.js');
@@ -19,6 +20,7 @@ app.use(bodyParser.json());
 app.use(express.static('dist'));
 
 // routes
+app.use('/api/signup', signup);
 app.use('/api/user', user);
 app.use('/api/login', login);
 app.use('/api/auth', auth);

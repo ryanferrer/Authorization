@@ -1,5 +1,4 @@
 const User = require('../models/User.js');
-
 /*
   CRUD handlers
 
@@ -41,7 +40,7 @@ function listUsers(callback) {
   });
 }
 
-// Update a user's password in the database
+// Change a User's password
 function updateUserPassword(payload, callback) {
   const query = {
     username: payload.username,
@@ -61,7 +60,7 @@ function updateUserPassword(payload, callback) {
   });
 }
 
-// Delete a user from the database
+// Remove account
 function deleteUser(payload, callback) {
   const query = {
     username: payload.username,
@@ -79,7 +78,7 @@ function deleteUser(payload, callback) {
   });
 }
 
-// find a user based off of incoming payload
+// Find User
 function findUser(payload, callback) {
   User.findOne(payload, (err, data) => {
     if (err || data === null) {
@@ -91,24 +90,6 @@ function findUser(payload, callback) {
     }
   });
 }
-
-/*
-
-  Auth psuedocode
-
-  I: User credentials
-  O: Login/Session Token
-
-  User sends username and password as credentials object
-  OR User sends email and password as crecentials object
-
-  then query the DB to see if there is a matching username/email (which is unique)
-  and get the password
-
-  then check to see if the password result from the query matches
-  the input password found in the credentials object
-
-*/
 
 function authenticate(credentials, callback) {
   const query = credentials.username;
