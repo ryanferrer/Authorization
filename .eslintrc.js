@@ -51,5 +51,6 @@ module.exports = {
     "eol-last": 0,
     "class-methods-use-this": 0,
     "comma-dangle": 1,
+    "quote-props": "always"
   },
 };

@@ -24,11 +24,40 @@ const profileSchema = new Schema({
 // User Schema
 const userSchema = new Schema({
   credentials: { type: credentialsSchema, required: true },
-  profile: { type: profileSchema, required: true },
+  profile: { type: profileSchema },
+});
+
+// Email Unique Validator
+userSchema.pre('save', (next) => {
+  User.find({
+    email: this.email
+  }, (err, docs) => {
+    if (!docs.length) {
+      next();
+    } else {
+      console.log('caught pre-save, email already exists!', this.email);
+      next(new Error("Email is already registered!"));
+    }
+  })
+});
+
+// Username Unique validator
+userSchema.pre('save', (next) => {
+  User.find({
+    username: this.username,
+  }, (err, docs) => {
+    if (!docs.length) {
+      next();
+    } else {
+      console.log('caught pre-save, username already exists!', this.username);
+      next(new Error("Username is already taken!"));
+    }
+  })
 });
 
 
+
 // Model to export
-const User = mongoose.model('User', userSchema);
+const User = mongoose.model('Users', userSchema);
 
 module.exports = User;

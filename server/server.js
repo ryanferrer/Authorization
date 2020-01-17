@@ -9,7 +9,7 @@ const PORT = 3030;
 // import route handlers
 const signup = require('./routes/api/Signup.js');
 const user = require('./routes/api/User.js');
-const login = require('./routes/api/Login.js');
+const signin = require('./routes/api/Signin.js');
 const auth = require('./routes/api/Auth.js');
 
 // User history to intecept client requests and forward to React Router history
@@ -22,7 +22,7 @@ app.use(express.static('dist'));
 // routes
 app.use('/api/signup', signup);
 app.use('/api/user', user);
-app.use('/api/login', login);
+app.use('/api/login', signin);
 app.use('/api/auth', auth);
 
 app.get('/', (req, res) => {
