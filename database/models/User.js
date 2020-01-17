@@ -28,32 +28,32 @@ const userSchema = new Schema({
 });
 
 // Email Unique Validator
-userSchema.pre('save', (next) => {
-  User.find({
-    email: this.email
-  }, (err, docs) => {
-    if (!docs.length) {
-      next();
-    } else {
-      console.log('caught pre-save, email already exists!', this.email);
-      next(new Error("Email is already registered!"));
-    }
-  })
-});
+// userSchema.pre('save', (next) => {
+//   User.find({
+//     email: this.email
+//   }, (err, docs) => {
+//     if (!docs.length) {
+//       next();
+//     } else {
+//       console.log('caught pre-save, email already exists!', this.email);
+//       next(new Error("Email is already registered!"));
+//     }
+//   })
+// });
 
 // Username Unique validator
-userSchema.pre('save', (next) => {
-  User.find({
-    username: this.username,
-  }, (err, docs) => {
-    if (!docs.length) {
-      next();
-    } else {
-      console.log('caught pre-save, username already exists!', this.username);
-      next(new Error("Username is already taken!"));
-    }
-  })
-});
+// userSchema.pre('save', (next) => {
+//   User.find({
+//     username: this.username,
+//   }, (err, docs) => {
+//     if (!docs.length) {
+//       next();
+//     } else {
+//       console.log('caught pre-save, username already exists!', this.username);
+//       next(new Error("Username is already taken!"));
+//     }
+//   })
+// });
 
 
 

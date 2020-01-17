@@ -19,9 +19,9 @@ app.use(bodyParser.json());
 app.use(express.static('dist'));
 
 // routes
+app.use('/api/signin', signin);
 app.use('/api/signup', signup);
 app.use('/api/user', user);
-app.use('/api/login', signin);
 
 app.get('/', (req, res) => {
   res.status(200).send();

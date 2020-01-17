@@ -1,4 +1,5 @@
 const User = require('../models/User.js');
+const bcrypt = require('bcrypt');
 /*
   CRUD handlers
 
@@ -82,15 +83,15 @@ function deleteUser(payload, callback) {
 function findUser(payload, callback) {
   const query = {
     credentials: {
-      username: payload.credentials.username,
+      username: payload.username,
     },
   };
 
   console.log(query);
 
-  User.findOne(query, (err, data) => {
+  User.findOne(query,(err, data) => {
     if (err) {
-      console.log('could not find user');
+      console.log('could not find user', err);
       callback(err);
     } else {
       console.log('user found! Logging in..', data);
@@ -99,16 +100,24 @@ function findUser(payload, callback) {
   });
 }
 
-function authenticate(credentials, callback) {
-  const query = credentials.username;
+function authenticate(payload, callback) {
+  console.log(payload)
 
-  User.find({ 'credentials.username': query }, 'credentials.password', (err, data) => {
+  User.findOne({ 'credentials.username': payload.credentials.username }, 'credentials.password', (err, document) => {
     if (err) {
-      console.log('could not find and authenticate user');
+      console.log('could not find user to authenticate');
       callback(err);
     } else {
-      console.log('here is the password for the user', query, data);
-      callback(null, data);
+      console.log('here is the password for the user', payload.credentials.username, document);
+
+      bcrypt.compare(payload.credentials.password, document.credentials.password, (err, res) => {
+        if (err) {
+          console.log('error comparing passwords', err);
+        } else {
+          console.log('successful comparison, lets get you logged in :)');
+          callback(null);
+        }
+      })
     }
   });
 }
