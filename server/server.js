@@ -2,6 +2,7 @@ const express = require('express');
 
 const bodyParser = require('body-parser');
 const history = require('connect-history-api-fallback');
+const cors = require('cors');
 
 const app = express();
 const PORT = 3030;
@@ -17,6 +18,7 @@ app.use(history());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(express.static('dist'));
+app.use(cors());
 
 // routes
 app.use('/api/signin', signin);

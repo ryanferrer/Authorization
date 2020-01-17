@@ -14,9 +14,9 @@ const route = express.Router();
 const { authenticate } = require('../../../database/controllers/User.js');
 
 route.post('/', (req, res) => {
-  console.log('incoming request for: ', req.body);
+  console.log('incoming request for: ', req.body.body);
 
-  authenticate(req.body, (error, data) => {
+  authenticate(req.body.body, (error, data) => {
     if (error || data === false) {
       console.log('database returned with an error', error);
       res.status(400).send('Error: No Such User');

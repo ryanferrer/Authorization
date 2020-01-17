@@ -20,7 +20,6 @@ const LoginPage = (props) => (
       </div>
       <form className="login-form" >
         <input
-          type="email"
           name="loginEmail"
           className="login-email"
           onChange={ (event) => props.userInput(event) }
@@ -31,7 +30,7 @@ const LoginPage = (props) => (
           className="login-password"
           onChange={ (event) => props.userInput(event) }
           placeholder="Password" />
-        <button type="submit" onClick={ () => props.login() }>Login</button>
+        <button onClick={ () => props.login() }>Login</button>
         <a href="#">Forgot Password</a>
         <p>
           Don't have an account? <a href="/signup">Sign Up</a>
