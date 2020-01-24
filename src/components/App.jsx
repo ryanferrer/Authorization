@@ -78,16 +78,18 @@ class App extends Component {
   login() {
     console.log(this.state);
 
-
-
+    // production url
     const url = 'http://ec2-3-136-51-144.us-east-2.compute.amazonaws.com:3030/api/signin';
+
+    // development url
+    // const url = 'http://localhost:3030/api/signin';
 
     const credentials = {
       username: this.state.loginEmail,
       password: this.state.loginPassword,
     };
 
-    Axios.post('http://localhost:3030/api/signin', {
+    Axios.post(url, {
       body: credentials
      })
       .then(() => console.log('success!!'))

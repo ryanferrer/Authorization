@@ -18,7 +18,7 @@ const LoginPage = (props) => (
           <h3>Continue with Google</h3>
         </div>
       </div>
-      <form className="login-form" >
+      {/* <form className="login-form" > */}
         <input
           name="loginEmail"
           className="login-email"
@@ -35,7 +35,7 @@ const LoginPage = (props) => (
         <p>
           Don't have an account? <a href="/signup">Sign Up</a>
         </p>
-      </form>
+      {/* </form> */}
     </div>
   </div>
 );
