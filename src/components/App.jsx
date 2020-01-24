@@ -79,10 +79,10 @@ class App extends Component {
     console.log(this.state);
 
     // production url
-    // const url = 'locahost:3030/api/signin';
+    const url = 'http://locahost:81/api/signin';
 
     // development url
-    const url = 'http://localhost:3030/api/signin';
+    // const url = 'http://localhost:3030/api/signin';
 
     const credentials = {
       username: this.state.loginEmail,
