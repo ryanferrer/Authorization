@@ -14,7 +14,7 @@ const route = express.Router();
 const { authenticate } = require('../../../database/controllers/User.js');
 
 route.post('/', (req, res) => {
-  console.log('incoming request for: ', req.body.body);
+  console.log('incoming request for: ', req.body);
 
   authenticate(req.body.body, (error, data) => {
     if (error || data === false) {

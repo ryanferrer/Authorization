@@ -101,17 +101,17 @@ function findUser(payload, callback) {
 }
 
 function authenticate(payload, callback) {
-  console.log(payload)
+  console.log('authenticating:',payload);
 
-  User.findOne({ 'credentials.username': payload.credentials.username }, 'credentials.password', (err, document) => {
+  User.findOne({ 'credentials.username': payload.username }, 'credentials.password', (err, document) => {
     if (err) {
       console.log('could not find user to authenticate');
       callback(err);
     } else {
-      console.log('here is the password for the user', payload.credentials.username, document);
+      console.log('here is the password for the user', payload.username, document);
 
-      bcrypt.compare(payload.credentials.password, document.credentials.password, (err, res) => {
-        console.log("comparing: ", payload.credentials.password, " to ", document.credentials.password, " = ", res)
+      bcrypt.compare(payload.password, document.credentials.password, (err, res) => {
+        console.log("comparing: ", payload.password, " to ", document.password, " = ", res)
         if (res === false) {
           console.log('error comparing passwords');
           callback(null, res);

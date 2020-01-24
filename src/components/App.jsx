@@ -76,22 +76,21 @@ class App extends Component {
   }
 
   login() {
-    console.log(this.state)
+    console.log(this.state);
 
-    const logInfo = {
-      email: this.state.loginEmail,
+
+
+    const url = 'http://ec2-3-136-51-144.us-east-2.compute.amazonaws.com:3030/api/signin';
+
+    const credentials = {
+      username: this.state.loginEmail,
       password: this.state.loginPassword,
     };
 
-    Axios.post('http://ec2-3-136-51-144.us-east-2.compute.amazonaws.com:3030/api/signin', {
-      body: {
-        credentials: {
-          username: this.state.loginEmail,
-          password: this.state.loginPassword
-        }
-      }
+    Axios.post('http://localhost:3030/api/signin', {
+      body: credentials
      })
-      .then(() => console.log('success'))
+      .then(() => console.log('success!!'))
       .catch(() => console.log('login failed'));
   }
 
