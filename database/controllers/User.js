@@ -111,7 +111,7 @@ function authenticate(payload, callback) {
       console.log('here is the password for the user', payload.username, document);
 
       bcrypt.compare(payload.password, document.credentials.password, (err, res) => {
-        console.log("comparing: ", payload.password, " to ", document.password, " = ", res)
+        console.log("comparing: ", payload.password, " to ", document.credentials.password, " = ", res)
         if (res === false) {
           console.log('error comparing passwords');
           callback(null, res);
