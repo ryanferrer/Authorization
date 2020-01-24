@@ -79,10 +79,10 @@ class App extends Component {
     console.log(this.state);
 
     // production url
-    // const url = 'http://ec2-3-136-51-144.us-east-2.compute.amazonaws.com/api/signin';
+    const url = 'http://ec2-3-136-51-144.us-east-2.compute.amazonaws.com/api/signin';
 
     // development url
-    const url = 'http://localhost:3030/api/signin';
+    // const url = 'http://localhost:3030/api/signin';
 
     const credentials = {
       username: this.state.loginEmail,
