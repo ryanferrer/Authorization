@@ -23,7 +23,7 @@ route.post('/', (req, res) => {
     } else {
       console.log('successful login attempt!!');
       // Issue a jwt token here
-      res.status(200).redirect('http://ec2-3-136-51-144.us-east-2.compute.amazonaws.com/dashboard/');
+      res.status(200).redirect('http://localhost:82/dashboard');
     }
   });
 });
