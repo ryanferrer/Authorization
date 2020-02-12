@@ -17,7 +17,7 @@ module.exports = {
   },
   devServer: {
     contentBase: 'dist',
-    port: 8080,
+    port: 8081,
     hot: true,
     historyApiFallback: true,
   },
@@ -57,6 +57,7 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       template: './src/index.html',
+      favicon: './assets/img/RR-cobalt.png'
     }),
   ],
 };

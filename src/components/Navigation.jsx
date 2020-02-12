@@ -16,7 +16,9 @@ const Navigation = (props) => {
   return (
     <nav className='landingPage-navBar'>
       <div className="landingPage-logo-menu">
-        <h2 className='logo'>RemoteReq</h2>
+        <a href="http://localhost:8080">
+          <h2 className='logo'>RemoteReq</h2>
+        </a>
         <div className="landingPage-menu">
           <label
             htmlFor='toggle'
