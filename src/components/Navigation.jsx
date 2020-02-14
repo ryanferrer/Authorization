@@ -1,9 +1,10 @@
 import React from 'react';
+import RemoteReq from '../../assets/img/RemoteReq-logotype-cobalt.png';
 
 const Navigation = (props) => {
   let menuVisible;
 
-  if (props.LandingPageMenuVisible === false && screen.width < 1366) {
+  if (props.LandingPageMenuVisible === false && screen.width < 481) {
     menuVisible = {
       display: 'none',
     };
@@ -15,11 +16,11 @@ const Navigation = (props) => {
 
   return (
     <nav className='landingPage-navBar'>
-      <div className="landingPage-logo-menu">
+      <div className='landingPage-name-menu'>
         <a href="http://localhost:8080">
-          <h2 className='logo'>RemoteReq</h2>
+          <img src={ RemoteReq } className='remotereq-name' alt='remote' />
         </a>
-        <div className="landingPage-menu">
+        <div className='landingPage-menu'>
           <label
             htmlFor='toggle'
             className='hamburgerMenu'
@@ -27,15 +28,9 @@ const Navigation = (props) => {
           >&#9776;</label>
         </div>
       </div>
-      <div className='landingPage-navBar-links' style={ menuVisible }>
-        <ul>
-          <li>home</li>
-          <li>employers</li>
-          <li className='job-seekers'>job seekers</li>
-          <li className='landingPage-signIn-button'><a href='/signin'>
-          sign in
-        </a></li>
-        </ul>
+      <div className='landingPage-navBar-links'>
+        <button className='find-talent-btn'>find talent</button>
+        <button className='log-in-btn'><a href='http://localhost:8081/signin'>sign in</a></button>
       </div>
     </nav>
   );
