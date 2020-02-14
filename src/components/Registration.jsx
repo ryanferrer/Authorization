@@ -21,12 +21,14 @@ const Registration = props => (
 
     <form>
       <NameEmailNumberPass userInput={props.userInput} />
+      <p className="password-note">Password must be at least 8 characters *</p>
       <button 
         type='submit' 
         className='registration-btn'
-        onClick={() => props.register()}>CREATE YOUR PROFILE</button>
-            <p>Already have an account? <a href='/signin'>Sign In</a>.</p>
+        onClick={() => props.register()}>CREATE YOUR PROFILE
+      </button>
 
+      <p className="redirect-to-signin">Already have an account? <a href='/signin'>Sign In</a></p>
     </form>
   </div>
 );

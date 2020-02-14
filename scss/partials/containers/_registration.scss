@@ -27,9 +27,18 @@
     font-family: $SecondaryFont;
   }
 
-  p {
-    text-align: center;
+  .password-note {
+    color: gray;
+    font-size: 8pt;
+    font-family: $SecondaryFont;
+  }
 
+  .redirect-to-signin{
+    padding-top: 8px;
+    text-align: center;
+  }
+
+  p {
     a {
       text-decoration: none;
     }
@@ -82,7 +91,7 @@
       height: 77px;
       margin-top: 10px;
       text-transform: uppercase;
-      width: 332px;
+      width: 100%;
     }
 
     button:hover {
