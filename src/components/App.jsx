@@ -4,7 +4,7 @@ import Axios from 'axios';
 import Navigation from './Navigation.jsx';
 import LoginPage from './LoginPage.jsx';
 import Registration from './Registration.jsx';
-
+import Footer from './Footer.jsx';
 
 class App extends Component {
   constructor(props) {
@@ -119,6 +119,7 @@ class App extends Component {
               }
             />
           </Switch>
+          <Footer />
         </div>
       </Router>
     );
