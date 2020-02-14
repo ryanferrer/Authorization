@@ -1,19 +1,32 @@
 import React from 'react';
 import NameEmailNumberPass from './regSubComponents/NameEmailNumberPass.jsx';
-import imgOne from '../../assets/img/person-pointing-on-a-map.jpg';
 
 const Registration = props => (
   <div className='registration'>
-    <div>
-      <h2>Work from anywhere</h2>
-      <img src={ imgOne } alt='person pointing on a map'/>
+    <div className="left-side-register">
+      <div className="left-side-header">
+        <h1>
+          Join hundreds 
+          <br/>
+          of elite 
+          <br/>
+          professionals.
+        </h1>
+      </div>
+      <div className="left-side-blurb">
+        Create your professional profile so we can start 
+        <br/>finding you jobs. Blah bleep blah bop bope.
+      </div>
     </div>
+
     <form>
       <NameEmailNumberPass userInput={props.userInput} />
       <button 
         type='submit' 
         className='registration-btn'
-        onClick={() => props.register()}>register</button>
+        onClick={() => props.register()}>CREATE YOUR PROFILE</button>
+            <p>Already have an account? <a href='/signin'>Sign In</a>.</p>
+
     </form>
   </div>
 );

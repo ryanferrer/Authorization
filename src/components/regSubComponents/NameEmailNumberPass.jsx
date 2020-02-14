@@ -2,8 +2,7 @@ import React from 'react';
 
 const NameEmailNumberPass = props => (
   <div>
-    <h2>Complete the form below to find your next remote gig.</h2>
-    <p>Already have an account? <a href='/signin'>Sign In</a>.</p>
+    <h2>Create your profile</h2>
     <input 
       type='text' 
       name='regFirstName' 
@@ -21,13 +20,6 @@ const NameEmailNumberPass = props => (
       name='regEmail' 
       onChange={ event => props.userInput(event) }
       placeholder='email' 
-      required />
-    <input 
-      type='tel' 
-      name='regPhoneNumber'
-      pattern='[0-9]{3}-[0-9]{3}-[0-9]{4}'
-      onChange={ event => props.userInput(event) }
-      placeholder='phone number: 555-555-5555'
       required />
     <input 
       type='password' 
