@@ -15,10 +15,10 @@ const LoginPage = (props) => (
         <p>
           By continuing, you agree to our  <a href="#">Terms of Use</a> and <a href="#">Privacy Policy</a>.
         </p>
-        <div className="fb-login">
+        {/* <div className="fb-login">
           <img src={ FBImage } alt="" srcSet=""/>
           <h3>Continue as Name</h3>
-        </div>
+        </div> */}
 
         <GoogleLogin 
         clientId="1005468463474-snfb80jfo4sg40fdapbcguuoa6uvbqq1.apps.googleusercontent.com"
@@ -34,7 +34,7 @@ const LoginPage = (props) => (
         </div> */}
 
       </div>
-      {/* <form className="login-form" > */}
+      <form className="login-form" >
         <input
           name="loginEmail"
           className="login-email"
@@ -51,7 +51,7 @@ const LoginPage = (props) => (
         <p>
           Don't have an account? <a href="/signup">Sign Up</a>
         </p>
-      {/* </form> */}
+      </form>
     </div>
   </div>
 );
