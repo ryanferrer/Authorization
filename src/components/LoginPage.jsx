@@ -1,11 +1,17 @@
 import React from 'react';
 import FBImage from '../../assets/img/facebook.png';
 import GglImage from '../../assets/img/google.png';
+import { GoogleLogin } from 'react-google-login';
+
+const responseGoogle = (response) => {
+  console.log(response);
+}
 
 const LoginPage = (props) => (
   <div className="login-form-page">
     <div className="login-container" >
       <div className="login-fb-google">
+
         <p>
           By continuing, you agree to our  <a href="#">Terms of Use</a> and <a href="#">Privacy Policy</a>.
         </p>
@@ -13,10 +19,20 @@ const LoginPage = (props) => (
           <img src={ FBImage } alt="" srcSet=""/>
           <h3>Continue as Name</h3>
         </div>
-        <div className="google-login">
+
+        <GoogleLogin 
+        clientId="1005468463474-snfb80jfo4sg40fdapbcguuoa6uvbqq1.apps.googleusercontent.com"
+          buttonText="Login"
+          onSuccess={responseGoogle}
+          onFailure={responseGoogle}
+          cookiePolicy={'single_host_origin'}
+          />
+
+        {/* <div className="google-login">
           <img src={ GglImage } alt="" srcSet=""/>
           <h3>Continue with Google</h3>
-        </div>
+        </div> */}
+
       </div>
       {/* <form className="login-form" > */}
         <input
